@@ -162,7 +162,10 @@ var Popover = function () {
     var layerOffset = {
       top: function () {
         var gutter = !_this3._options.overlapSelector && _this3._options.gutter ? _this3._options.gutter : 0;
-        if (window.innerHeight < rect.top + layerHeight) {
+        console.log(rect);
+        console.log(layerHeight);
+
+        if (window.innerHeight < rect.bottom + layerHeight) {
           return triggerOffset.top - layerHeight - gutter + Number('' + (_this3._options.overlapSelector ? rect.height : 0));
         } else {
           return triggerOffset.top + Number('' + (_this3._options.overlapSelector ? 0 : rect.height)) + gutter;
@@ -184,7 +187,6 @@ var Popover = function () {
         return left;
       }()
     };
-    console.log(layerOffset);
     layer.style.cssText = 'top: ' + layerOffset.top + 'px; left: ' + layerOffset.left + 'px';
     if (typeof callback === 'function') callback(layerOffset);
   };

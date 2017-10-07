@@ -26,7 +26,7 @@ Install via add a css, javascript files from the [dist](dist) directory to your 
 </head>
 
 <body>
-  <button class="trigger" data-layer-id="test-layer">
+  <button class="trigger" data-layer-id="test-layer" data-alignment="left">
     click here
   </button>
 

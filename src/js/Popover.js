@@ -68,7 +68,10 @@ export default class Popover {
     let layerOffset = {
       top: (() => {
         let gutter = !this._options.overlapSelector && this._options.gutter ? this._options.gutter : 0;
-        if (window.innerHeight < rect.top + layerHeight) {
+        console.log(rect);
+        console.log(layerHeight);
+
+        if (window.innerHeight < rect.bottom + layerHeight) {
           return triggerOffset.top - layerHeight - gutter + Number(`${this._options.overlapSelector?rect.height:0}`);
         } else {
           return triggerOffset.top + Number(`${this._options.overlapSelector?0:rect.height}`) + gutter;
@@ -90,7 +93,6 @@ export default class Popover {
         return left;
       })()
     }
-    console.log(layerOffset);
     layer.style.cssText = `top: ${layerOffset.top}px; left: ${layerOffset.left}px`;
     if (typeof callback === 'function') callback(layerOffset);
   }
