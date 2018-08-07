@@ -43,7 +43,6 @@ export default class Popover {
         // 트리거 클릭 시 이벤트
         delegate(document, selector, 'click', ({ delegateTarget }) => {
             const layer = document.getElementById(delegateTarget.getAttribute('data-layer-id'));
-
             if (layer === this.state.openLayer) {
                 this.close();
                 return;
