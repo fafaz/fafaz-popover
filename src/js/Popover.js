@@ -59,6 +59,9 @@ export default class Popover {
     open() {
         this.position(() => {
             this.state.openLayer.classList.add('fz-popover__active');
+
+            this._trigger('open', this.state);
+
             window.addEventListener('resize', () => {
                 this.position();
             });
@@ -78,6 +81,13 @@ export default class Popover {
             e.stopPropagation();
         });
         this.state.openLayer = null;
+    }
+
+    position(callback = null) {
+        this._calculate().then(offset => {
+            this.state.openLayer.style.cssText = `top: ${offset.top}px; left: ${offset.left}px`;
+            if (typeof callback === 'function') callback();
+        });
     }
 
     _calculate = () =>
@@ -112,10 +122,14 @@ export default class Popover {
             resolve(layerOffset);
         });
 
-    position(callback = null) {
-        this._calculate().then(offset => {
-            this.state.openLayer.style.cssText = `top: ${offset.top}px; left: ${offset.left}px`;
-            if (typeof callback === 'function') callback();
-        });
+    handlerList = {};
+
+    _trigger(eventName, modules) {
+        this.handlerList[eventName] !== undefined && this.handlerList[eventName](modules);
+        // modules 는 전달값
+    }
+
+    on(eventName, handler) {
+        this.handlerList[eventName] = handler;
     }
 }
