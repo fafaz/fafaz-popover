@@ -1,64 +1,66 @@
 # fafaz-Popover
-fafaz-Popover is a lightweight popover plugin with no dependencies
+fafaz-Tab is a lightweight Popover plugin (4.56KB minified / 1.79KB gzipped)
 
-Example Page: [https://fafaz.github.io/fafaz-popover/demo/demo.html](https://fafaz.github.io/fafaz-popover/demo/demo.html)
+</br><br/>
 
-
-</br>
-
-## Instructions
-
-Install via add a css, javascript files from the [dist](dist) directory to your page.
-
-
-<br/>
-
-## Usage
-
-
-##### HTML
+## Instructions 
+#### common
 
 ```html
-<head>
-  ...
-  <script src="Popover.js"></script>
-  <link rel="stylesheet" href="Popover.css" />
-</head>
-
 <body>
-  <button class="trigger" data-layer-id="test-layer" data-alignment="left">
-    click here
-  </button>
-
-  <div id="test-layer" class="popover-layer">Your Contents</div>
+    <button class="trigger" data-layer-id="content">Click!</button>
+    <div id="contents" class="fz-popover">Contents</div>
 </body>
 ```
 
+<br/>
+#### basic usage
 
-</br>
+```html
+<body>
+  .
+  .
+  .
 
-##### Javascript
+    <script src="path/Popover.min.js"></script>
+    <script>
+        var myPopover = new fafaz.Popover.default('.trigger');
+    </script>
+</body>
+```
+
+<br/>
+#### package manager + babel compiler 
+
+`npm install --save fafaz-popover` **or** `yarn add fafaz-popover`
+
+
+```javascript
+import Popover from 'fafaz-popover';
+
+const myPopover = new Popover('.trigger');
+```
+
+
+<br/><br/>
+
+## Options
 
 ```javascript
 var myPopover = new fafaz.Popover('.trigger', {
-  ...options
+    gutter: 10,
+    alignment: 'left'
 });
 ```
 
 
-<br/>
+<br/><br/>
 
-## Options
-```javascript
-{
-  gutter: null,
-  overlapSelector: true,
-  callback: null
-}
-```
+## Dependencies
 
+delegate [https://github.com/zenorocha/delegate](https://github.com/zenorocha/delegate)
 
-<br/>
+<br/><br/>
 
 ## License
 
