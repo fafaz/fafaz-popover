@@ -1,8 +1,8 @@
 {
   "name": "fafaz-popover",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "1.0.1",
+  "description": "javascript library",
+  "main": "build/Popover.min.js",
   "scripts": {
     "start": "webpack-dev-server --open --config webpack.config.dev.js",
     "build": "webpack --config webpack.config.prod.js"
