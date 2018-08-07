@@ -5,7 +5,7 @@ import delegate from 'delegate';
  */
 
 export default class Popover {
-    VERSION = '1.0.4';
+    VERSION = '1.0.5';
 
     // 브라우저에 동시에 2개 이상의 레이어가 열려있을 수 없다는 전제에 기반하여
     // 현재 열려이쓴ㄴ 레이어에 대하여만 리사이즈, 포지션 이벤트 등을 관리
