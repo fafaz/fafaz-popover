@@ -14,6 +14,7 @@ fafaz-Tab is a lightweight Popover plugin (4.56KB minified / 1.79KB gzipped)
 ```
 
 <br/>
+
 #### basic usage
 
 ```html
@@ -30,6 +31,7 @@ fafaz-Tab is a lightweight Popover plugin (4.56KB minified / 1.79KB gzipped)
 ```
 
 <br/>
+
 #### package manager + babel compiler 
 
 `npm install --save fafaz-popover` **or** `yarn add fafaz-popover`
