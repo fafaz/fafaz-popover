@@ -5,7 +5,7 @@ import delegate from 'delegate';
  */
 
 export default class Popover {
-    VERSION = '1.0.6';
+    VERSION = '1.0.7';
 
     // 브라우저에 동시에 2개 이상의 레이어가 열려있을 수 없다는 전제에 기반하여
     // 현재 열려이쓴ㄴ 레이어에 대하여만 리사이즈, 포지션 이벤트 등을 관리
@@ -29,6 +29,8 @@ export default class Popover {
             gutter: 10,
             // 정렬
             alignment: 'left',
+
+            hover: false,
             ...options
         };
 
@@ -43,7 +45,7 @@ export default class Popover {
         );
 
         // 트리거 클릭 시 이벤트
-        delegate(document, selector, 'click', ({ delegateTarget }) => {
+        delegate(document, selector, this._config.hover ? 'hover' : 'click', ({ delegateTarget }) => {
             const layer = document.getElementById(delegateTarget.getAttribute('data-layer-id'));
             layer.removeAttribute('hidden');
             layer.classList.add('fz-popover');
