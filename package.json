@@ -1,6 +1,6 @@
 {
   "name": "fafaz-popover",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "javascript library",
   "main": "build/Popover.min.js",
   "scripts": {
