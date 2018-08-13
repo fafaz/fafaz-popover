@@ -29,8 +29,6 @@ export default class Popover {
             gutter: 10,
             // 정렬
             alignment: 'left',
-
-            hover: false,
             ...options
         };
 
@@ -45,7 +43,7 @@ export default class Popover {
         );
 
         // 트리거 클릭 시 이벤트
-        delegate(document, selector, this._config.hover ? 'hover' : 'click', ({ delegateTarget }) => {
+        delegate(document, selector, 'click', ({ delegateTarget }) => {
             const layer = document.getElementById(delegateTarget.getAttribute('data-layer-id'));
             layer.removeAttribute('hidden');
             layer.classList.add('fz-popover');
